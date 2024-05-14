@@ -64,13 +64,13 @@ function App() {
       ],
       model: 'gpt-3.5-turbo',
     });
-    //const imageResponse = await openai.images.generate({
-      //model: "dall-e-3",
-      //prompt: "A logo for a company named " + name + " with the description " + description + ". The colors are " + color1 + ", " + color2 + ", " + color3 + " and the icon is " + icon + ".",
-      //n: 1,
-      //size: "1024x1024",
-    //});
-    //setImage_url(imageResponse.data[0].url);
+    const imageResponse = await openai.images.generate({
+      model: "dall-e-3",
+      prompt: "A logo for a company named " + name + " with the description " + description + ". The colors are " + color1 + ", " + color2 + ", " + color3 + " and the icon is " + icon + ".",
+      n: 1,
+      size: "1024x1024",
+    });
+    setImage_url(imageResponse.data[0].url);
 
     const response1 = suggestions.choices[0].message.content;
     const list1= response1.match(/(?<=\d\.\s).*?(?=\s\d\.\s|$)/g);
