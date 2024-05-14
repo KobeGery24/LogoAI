@@ -50,6 +50,7 @@ function App() {
         { role: 'user', content: 'Suggest some colors which would be better to use for the logo or respond which given color is suitable' },
       ],
       model: 'gpt-3.5-turbo',
+      temperature: 0.8
     });
     const betterName = await openai.chat.completions.create({
       messages: [
@@ -63,6 +64,7 @@ function App() {
         { role: 'user', content: 'Suggest better name ideas related to the given one.' },
       ],
       model: 'gpt-3.5-turbo',
+      temperature: 0.8
     });
     const imageResponse = await openai.images.generate({
       model: "dall-e-3",
